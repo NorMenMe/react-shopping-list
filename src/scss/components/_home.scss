@@ -1,0 +1,11 @@
+@import "../abstracts/mixins";
+
+.container-title {
+  @include center;
+  color: orange;
+  margin-top: 3rem;
+
+  .title {
+    color: orange;
+  }
+}
