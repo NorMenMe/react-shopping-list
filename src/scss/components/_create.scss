@@ -1,0 +1,25 @@
+.container-form {
+  width: 40%;
+  height: 10rem;
+  background-color: #f5d394;
+  margin: 0 auto;
+  padding: 3%;
+  margin-top: 3rem;
+
+  .container-input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 1rem;
+
+    #btn-submit {
+      background-color: #39c0ed;
+      border-radius: 20px;
+    }
+  }
+}

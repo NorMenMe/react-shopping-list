@@ -1,4 +1,5 @@
 @import "../abstracts/mixins";
+@import "../components/create";
 
 .container-title {
   @include center;

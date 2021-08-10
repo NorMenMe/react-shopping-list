@@ -22,6 +22,24 @@
 
 //#########
 
-// API problem : if key stored inside variable => get error 401
+-steps from 10/08:
+-card functionality,button redirect to cart, cart site
 
-// Routing problem : redirect to another page with link, from home to create
+// API problem : if key stored inside variable => get error 401
+// const apiKey = "67d766cac1e94d4d85ac33708f9ffb83 "; //? if inserted in API error 401
+
+// problem :
+
+- passing "allProducts" via Context not working,so via props
+
+I can't
+but display the allProducts below : no redirect for List, inside List build the render for List; input needed is an array of obj, code it Hadi style.
+
+-List : Card of bootstrap ?
+
+render: div container-card div , div decre,div product info,div increment , div delete-btn
+
+// problem : retrieve only the first 2 photos
+
+- next :
+- onClick increment pass the product.id up to the function addItem/ increment count state default 0 / handleincrement/ refactor with reducer ?Do I need it ?

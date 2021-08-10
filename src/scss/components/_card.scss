@@ -1,0 +1,31 @@
+.card-body {
+  margin-bottom: 1rem;
+
+  .wrapper-increment {
+    width: 100%;
+    height: 1rem;
+    // outline: 2px solid red;
+    @include flex-end;
+
+    #increment {
+      width: $basic-w;
+      height: $basic-h;
+      background-color: #39c0ed;
+      @include center;
+    }
+  }
+
+  .wrapper-decrement {
+    width: 100%;
+    height: 1rem;
+    // outline: 2px solid red;
+    @include flex-end;
+
+    #decrement {
+      width: $basic-w;
+      height: $basic-h;
+      background-color: #f5d394;
+      @include center;
+    }
+  }
+}
