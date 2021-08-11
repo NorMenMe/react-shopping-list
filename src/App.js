@@ -10,33 +10,33 @@ import Create from "./components/Create";
 import ProductContext from "../src/components/ProductContext";
 
 function App() {
-  const [entry, setEntry] = useState("");
-  const [query, setQuery] = useState("");
-  const [search, setSearch] = useState([]);
+  // const [entry, setEntry] = useState("");
+  // const [query, setQuery] = useState("");
+  // const [search, setSearch] = useState([]);
 
-  const handleInputChange = (e) => setEntry(e.target.value);
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setQuery(entry);
-    setEntry("");
-  };
-  console.log(query);
+  // const handleInputChange = (e) => setEntry(e.target.value);
+  // const handleFormSubmit = (e) => {
+  //   e.preventDefault();
+  //   setQuery(entry);
+  //   setEntry("");
+  // };
+  // console.log(query);
 
-  const getFetch = async () => {
-    const response = await fetch(
-      `https://www.omdbapi.com/?apikey=b88fec9&s=${query}`
-    );
-    const data = await response.json();
-    console.log(data.Search);
-    setSearch(data.Search);
-  };
-  console.log(search);
+  // const getFetch = async () => {
+  //   const response = await fetch(
+  //     `https://www.omdbapi.com/?apikey=b88fec9&s=${query}`
+  //   );
+  //   const data = await response.json();
+  //   console.log(data.Search);
+  //   setSearch(data.Search);
+  // };
+  // console.log(search);
 
   // useEffect(() => {
   //   getFetch();
   // }, [search]);
 
-  getFetch();
+  // getFetch();
 
   return (
     <BrowserRouter>
