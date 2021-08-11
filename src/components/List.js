@@ -3,15 +3,17 @@ import ProductContext from "./ProductContext";
 import Card from "./Card";
 
 function List() {
-  const { allProducts } = useContext(ProductContext);
-  console.log(allProducts);
+  const { search } = useContext(ProductContext);
+  console.log(search);
 
-  const result = allProducts.map((product) => {
-    const imgUrl = `https://spoonacular.com/cdn/ingredients_100x100/${product.name}.jpg`;
+  const deleteProduct = (id) => {
+    return search.filter((movie) => movie.id !== id);
+  };
 
+  const result = search.map((movie) => {
     return (
       <>
-        <Card product={product} imgUrl={imgUrl} />
+        <Card movie={movie} deleteProduct={deleteProduct} />
       </>
     );
   });

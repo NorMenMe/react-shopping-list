@@ -1,4 +1,5 @@
 import "./scss/main.scss";
+import database from "./database.json";
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
@@ -9,32 +10,33 @@ import Create from "./components/Create";
 import ProductContext from "../src/components/ProductContext";
 
 function App() {
-  const [product, setProduct] = useState("");
-  const [added, setAdded] = useState([]);
-  const [allProducts, setAllProducts] = useState([]);
+  const [entry, setEntry] = useState("");
+  const [query, setQuery] = useState("");
+  const [search, setSearch] = useState([]);
 
-  const handleInputChange = (e) => setProduct(e.target.value);
+  const handleInputChange = (e) => setEntry(e.target.value);
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    setAdded([...added, product]);
-    setProduct("");
+    setQuery(entry);
+    setEntry("");
   };
+  console.log(query);
 
-  // ↓↓↓ fetch
-
-  // uncomment for testing ↓↓↓
-  const API = `https://api.spoonacular.com/food/ingredients/search?apiKey=67d766cac1e94d4d85ac33708f9ffb83&query=${added}`;
-
-  async function getFetch() {
-    const response = await fetch(API);
+  const getFetch = async () => {
+    const response = await fetch(
+      `https://www.omdbapi.com/?apikey=b88fec9&s=${query}`
+    );
     const data = await response.json();
-    setAllProducts([...data.results]);
-  }
-  console.log(allProducts);
+    console.log(data.Search);
+    setSearch(data.Search);
+  };
+  console.log(search);
 
-  useEffect(() => {
-    getFetch();
-  }, [added]);
+  // useEffect(() => {
+  //   getFetch();
+  // }, [search]);
+
+  getFetch();
 
   return (
     <BrowserRouter>
@@ -46,7 +48,7 @@ function App() {
       </Navbar>
 
       <ProductContext.Provider
-        value={{ handleInputChange, handleFormSubmit, allProducts, product }}
+        value={{ handleInputChange, handleFormSubmit, entry, search }}
       >
         <Switch>
           <Route exact path="/" component={Home} />
