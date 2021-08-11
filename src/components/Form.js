@@ -9,12 +9,13 @@ function Form() {
     <>
       <form onSubmit={handleFormSubmit}>
         <div className="container-input">
-          <label htmlFor="product">Product : </label>
+          <label htmlFor="product">Get your movie ! </label>
           <input
             type="text"
             id="product"
             onChange={handleInputChange}
             value={entry}
+            placeholder="movie name"
           />
         </div>
         <div className="container-btn">

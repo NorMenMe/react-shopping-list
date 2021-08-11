@@ -52,5 +52,11 @@ render: div container-card div , div decre,div product info,div increment , div 
 
 - Bonus: addding price :map return {...item,price:Math.random}
 
--next : finish style comp Card then Move on to basket
+-next : finish style comp Card
+
+- create wrapper create /
+- inside Card, display flex-wrap
+- add a button : Basket with logo
+
+then Move on to basket :
 <>search ranoom number 2 decimal

@@ -18,7 +18,7 @@ function List() {
     );
   });
 
-  return <div className="wrapper-list">Suggested products :{result}</div>;
+  return <div className="wrapper-list">{result}</div>;
 }
 
 export default List;

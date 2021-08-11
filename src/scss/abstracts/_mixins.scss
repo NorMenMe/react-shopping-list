@@ -23,3 +23,10 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+@mixin flex-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
