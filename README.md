@@ -50,4 +50,7 @@ render: div container-card div , div decre,div product info,div increment , div 
 - delete : array allProducts is in the parent / delete fu happen in List, passed down to Card as props
 - deleteProducts when fired update the array of obj allProducts, need to be rerendered ( delete function inside useEffect ? )
 
-- next- why is search undefined ?
+- Bonus: addding price :map return {...item,price:Math.random}
+
+-next : finish style comp Card then Move on to basket
+<>search ranoom number 2 decimal

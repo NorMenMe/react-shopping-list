@@ -3,17 +3,17 @@ import ProductContext from "./ProductContext";
 import Card from "./Card";
 
 function List() {
-  const { search } = useContext(ProductContext);
-  console.log(search);
+  const { search, setSearch } = useContext(ProductContext);
 
-  const deleteProduct = (id) => {
-    return search.filter((movie) => movie.id !== id);
+  const removeUpdate = (id) => {
+    const temp = search.filter((movie) => movie.imdbID !== id);
+    setSearch(temp);
   };
 
-  const result = search.map((movie) => {
+  const result = search.map((movie, index) => {
     return (
       <>
-        <Card movie={movie} deleteProduct={deleteProduct} />
+        <Card key={index} movie={movie} removeUpdate={removeUpdate} />
       </>
     );
   });

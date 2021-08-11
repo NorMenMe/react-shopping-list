@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Card({ movie, deleteProduct }) {
+function Card({ movie, removeUpdate }) {
   const [count, setCount] = useState(0);
 
   function handleIncrementClick() {
@@ -11,7 +11,9 @@ function Card({ movie, deleteProduct }) {
     setCount(count - 1);
   }
 
-  console.log(count);
+  const getPrice = () => {
+    return (Math.random() * 10).toFixed(2);
+  };
 
   return (
     <>
@@ -24,9 +26,11 @@ function Card({ movie, deleteProduct }) {
             </div>
           </div>
           <div className="name-count">
-            <h5 className="card-title">{movie.name}</h5>
+            <h5 className="card-title">{movie.Title}</h5>
             <p>{count}</p>
           </div>
+          <p>€{getPrice()}</p>
+
           <div className="wrapper-decrement">
             <div id="decrement">
               <span onClick={handleDecrementClick}>-</span>
@@ -35,8 +39,8 @@ function Card({ movie, deleteProduct }) {
         </div>
         <button
           type="button"
-          class="btn btn-danger"
-          onClick={() => deleteProduct(movie.imdbID)}
+          className="btn btn-danger"
+          onClick={() => removeUpdate(movie.imdbID)}
         >
           Delete item
         </button>
