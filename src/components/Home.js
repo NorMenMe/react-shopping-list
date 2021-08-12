@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="container-title">
       <Link to="/create" className="title">
-        Create your shopping list !
+        A movie shopping list.
       </Link>
     </div>
   );

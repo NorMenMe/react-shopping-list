@@ -10,7 +10,7 @@ function Form() {
       <form onSubmit={handleFormSubmit}>
         <div className="container-input">
           <label htmlFor="product" id="label">
-            Get your movie !!!{" "}
+            ↓ Get your movies ↓
           </label>
           <input
             type="text"

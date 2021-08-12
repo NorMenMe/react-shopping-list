@@ -8,5 +8,10 @@
 
   .title {
     color: orange;
+    font-size: 3rem;
+    text-decoration: none;
+  }
+  .title:hover {
+    color: $primary;
   }
 }

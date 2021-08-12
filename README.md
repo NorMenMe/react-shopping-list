@@ -27,7 +27,7 @@
 
 - all invalid cases : 'too many results' bei up, input-field empty click search : add a module,
 
-- style : home comp
+- style : home comp / in Card the price + hover on incremen/decre
 
 -card functionality,button redirect to cart, cart site
 
@@ -40,5 +40,7 @@ render: div container-card div , div decre,div product info,div increment , div 
 // problems:
 
 - if fetch error : to many results
+
+* if condition reuturn alert not working
 
 -next : finish style comp Card

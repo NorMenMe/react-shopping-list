@@ -9,6 +9,7 @@ import List from "./components/List";
 import Create from "./components/Create";
 import ProductContext from "../src/components/ProductContext";
 import { BiCameraMovie } from "react-icons/bi";
+import { Modal } from "bootstrap";
 
 function App() {
   const [entry, setEntry] = useState("");
@@ -25,15 +26,27 @@ function App() {
     item.price = (Math.random() * 10).toFixed(2);
     return item;
   };
+
   const getFetch = async () => {
-    const response = await fetch(
-      `https://www.omdbapi.com/?apikey=b88fec9&s=${entry}`
-    );
-    const data = await response.json();
-    console.log(data.response);
-    setSearch(data.Search.map(getRandomPrice));
+    try {
+      const response = await fetch(
+        `https://www.omdbapi.com/?apikey=b88fec9&s=${entry}`
+      );
+      console.log(response);
+      const data = await response.json();
+      console.log(data.Error);
+      setSearch(data.Search.map(getRandomPrice));
+      // alert(data.Error);
+      // data.Error ? alert(data.Error) : "";
+      if (data.Error) {
+        return alert(data.Error);
+      }
+    } catch (error) {
+      console.log("error");
+    }
   };
-  console.log(search);
+
+  // console.log(search);
 
   return (
     <BrowserRouter>
