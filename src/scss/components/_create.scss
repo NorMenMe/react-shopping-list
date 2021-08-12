@@ -4,26 +4,39 @@
 
   .container-form {
     width: 100%;
-    height: 10rem;
+    height: 20rem;
     background-color: #f5d394;
     margin: 0 auto;
     padding: 3%;
-    margin-top: 3rem;
+    margin-top: 2rem;
+    border-radius: 7px;
 
     .container-input {
       display: flex;
       flex-direction: column;
+
+      #label {
+        color: $primary;
+        font-size: 3rem;
+        // padding: 2%;
+        margin-bottom: 2rem;
+      }
     }
 
-    .container-btn {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
+    .wrapper-btn {
+      @include flex-end;
+      width: 100%;
+      // outline: 2px solid red;
       margin-top: 1rem;
 
-      #btn-submit {
+      .btn {
         background-color: #39c0ed;
         border-radius: 20px;
+        margin-right: 1rem;
+      }
+
+      .btn:hover {
+        color: black;
       }
     }
   }

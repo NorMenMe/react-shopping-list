@@ -11,39 +11,46 @@ function Card({ movie, removeUpdate }) {
     setCount(count - 1);
   }
 
-  const getPrice = () => {
-    return (Math.random() * 10).toFixed(2);
-  };
-
   return (
     <>
-      <div key={movie.imdbID} className="card" style={{ width: "14rem" }}>
-        <img className="card-img-top" src={movie.Poster} alt="Card image cap" />
+      <div key={movie.imdbID} className="card">
+        <div className="wrapper-img">
+          <img
+            className="card-img-top img"
+            src={movie.Poster}
+            alt="Card image cap"
+          />
+        </div>
         <div className="card-body">
-          <div className="wrapper-increment">
-            <div id="increment">
-              <span onClick={handleIncrementClick}>+</span>
+          <div className="wrapper-card">
+            <div className="wrapper-increment">
+              <div id="increment">
+                <span onClick={handleIncrementClick}>+</span>
+              </div>
             </div>
-          </div>
-          <div className="name-count">
-            <h5 className="card-title">{movie.Title}</h5>
-            <p>{count}</p>
-          </div>
-          <p>€{getPrice()}</p>
+            <div className="wrapper-name-count">
+              <h5 className="card-title">{movie.Title}</h5>
+              <div className="wrapper-count">
+                <p id="count">{count}</p>
+              </div>
+            </div>
+            <div className="wrapper-decrement">
+              <div id="decrement">
+                <span onClick={handleDecrementClick}>-</span>
+              </div>
+            </div>
 
-          <div className="wrapper-decrement">
-            <div id="decrement">
-              <span onClick={handleDecrementClick}>-</span>
-            </div>
+            <p id="price">€{movie.price}</p>
+
+            <button
+              type="button"
+              className="btn btn-danger"
+              onClick={() => removeUpdate(movie.imdbID)}
+            >
+              Delete item
+            </button>
           </div>
         </div>
-        <button
-          type="button"
-          className="btn btn-danger"
-          onClick={() => removeUpdate(movie.imdbID)}
-        >
-          Delete item
-        </button>
       </div>
     </>
   );

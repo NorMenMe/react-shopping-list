@@ -19,21 +19,15 @@
 
 - unfortunately no free api , so fake database with a local json file : 'database.json'
 
+- learned : no price in api so I add it manually, check line 32
+
 //#########################
 
-- fake api problem :fake json , fetch from there
+-toDo steps :
 
-http://www.omdbapi.com/?i=tt3896198&apikey=b88fec9
+- all invalid cases : 'too many results' bei up, input-field empty click search : add a module,
 
-`https://www.omdbapi.com/?apikey=b88fec9&s=${search}`
-
--steps :  
-input : arr of obj + input
-output:
-how retrieve database data :
-iterate through databaase
-if database.id === setProduct
-setListcard [ key]
+- style : home comp
 
 -card functionality,button redirect to cart, cart site
 
@@ -43,20 +37,8 @@ setListcard [ key]
 
 render: div container-card div , div decre,div product info,div increment , div delete-btn
 
-// problem : retrieve only the first 2 photos
+// problems:
 
-- next :
-- refactor with reducer ?Do I need it ?
-- delete : array allProducts is in the parent / delete fu happen in List, passed down to Card as props
-- deleteProducts when fired update the array of obj allProducts, need to be rerendered ( delete function inside useEffect ? )
-
-- Bonus: addding price :map return {...item,price:Math.random}
+- if fetch error : to many results
 
 -next : finish style comp Card
-
-- create wrapper create /
-- inside Card, display flex-wrap
-- add a button : Basket with logo
-
-then Move on to basket :
-<>search ranoom number 2 decimal

@@ -1,0 +1,16 @@
+.navbar {
+  height: 5rem;
+
+  .logo {
+    align-items: center;
+  }
+
+  #home {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+  }
+  #home:hover {
+    color: white;
+  }
+}

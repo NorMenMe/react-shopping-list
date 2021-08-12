@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import List from "./components/List";
 import Create from "./components/Create";
 import ProductContext from "../src/components/ProductContext";
+import { BiCameraMovie } from "react-icons/bi";
 
 function App() {
   const [entry, setEntry] = useState("");
@@ -20,12 +21,17 @@ function App() {
     setEntry("");
   };
 
+  const getRandomPrice = (item) => {
+    item.price = (Math.random() * 10).toFixed(2);
+    return item;
+  };
   const getFetch = async () => {
     const response = await fetch(
       `https://www.omdbapi.com/?apikey=b88fec9&s=${entry}`
     );
     const data = await response.json();
-    setSearch(data.Search);
+    console.log(data.response);
+    setSearch(data.Search.map(getRandomPrice));
   };
   console.log(search);
 
@@ -33,8 +39,12 @@ function App() {
     <BrowserRouter>
       <Navbar bg="info" expand="lg">
         <Container>
-          <div>Logo</div>
-          <Link to="/">Home</Link>
+          <div className="logo">
+            <BiCameraMovie size="60px" />
+          </div>
+          <Link to="/" id="home">
+            Home
+          </Link>
         </Container>
       </Navbar>
 
