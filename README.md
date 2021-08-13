@@ -1,46 +1,52 @@
-#### Notes
+👋 Welcome here.
 
-- UI Kit :
+### Description:
 
-* Home
-* Inputs , ShowList > ListItem > Increment, Decrement, Remove
-*
+A basic shopping list of movies, done with react.
 
-- Which Component needs to be reusable:
+### Instructions:
 
-- Functionalities : Routing,Context
+Login and get your free API-Key here : https://www.omdbapi.com/ .
+Inside App.js, replace fetch's url with your API key : `https://www.omdbapi.com/?apikey=YOURAPIKEY&s=${entry}`
 
-- MockUp :
+🚀 Run the app & search for a movie.
 
-![Alt Text](https://media.giphy.com/media/m3aR6S8FVG9Uwp23eB/giphy.gif)
-![Alt Text](https://media.giphy.com/media/3Oi4H9UAaJqR5GYFCR/giphy.gif)
+### Preview :
 
-- #### Instructions :
+![Alt Text](https://media.giphy.com/media/jFCtsjeryRg0cv8jTp/giphy.gif)
+
+#### UI kit:
+
+- Home
+- Create
+- Form
+- List
+- Card
+
+#### These components needs to be reusable:
+
+#### Functionalities :
+
+Routing,Context
+
+- #### Issues :
 
 - unfortunately no free api , so fake database with a local json file : 'database.json'
 
 - learned : no price in api so I add it manually, check line 32
 
+* inside List.js, on line 13, store the map logic in a variable and then pass it through the render ;
+
 //#########################
 
--toDo steps :
+-toDo steps prio :
 
-- all invalid cases : 'too many results' bei up, input-field empty click search : add a module,
+- all invalid cases : 'too many results' bei up, input-field empty click search : add a modal
 
-- style : home comp / in Card the price + hover on incremen/decre
+-output : prompt(data.Error) ;
 
--card functionality,button redirect to cart, cart site
-
-// problem :
-
-- passing "allProducts" via Context not working,so via props
-
-render: div container-card div , div decre,div product info,div increment , div delete-btn
+- gh-care : check front-mentor readme
 
 // problems:
 
-- if fetch error : to many results
-
-* if condition reuturn alert not working
-
--next : finish style comp Card
+- -next : finish style comp Card

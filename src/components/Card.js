@@ -24,8 +24,8 @@ function Card({ movie, removeUpdate }) {
         <div className="card-body">
           <div className="wrapper-card">
             <div className="wrapper-increment">
-              <div id="increment">
-                <span onClick={handleIncrementClick}>+</span>
+              <div id="increment" onClick={handleIncrementClick}>
+                <span>+</span>
               </div>
             </div>
             <div className="wrapper-name-count">
@@ -35,8 +35,8 @@ function Card({ movie, removeUpdate }) {
               </div>
             </div>
             <div className="wrapper-decrement">
-              <div id="decrement">
-                <span onClick={handleDecrementClick}>-</span>
+              <div id="decrement" onClick={handleDecrementClick}>
+                <span>-</span>
               </div>
             </div>
 

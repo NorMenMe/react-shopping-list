@@ -10,7 +10,7 @@ function Form() {
       <form onSubmit={handleFormSubmit}>
         <div className="container-input">
           <label htmlFor="product" id="label">
-            ↓ Get your movies ↓
+            Get your movies !!!
           </label>
           <input
             type="text"
@@ -21,7 +21,7 @@ function Form() {
           />
         </div>
         <div className="wrapper-btn">
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Search
           </button>
         </div>
