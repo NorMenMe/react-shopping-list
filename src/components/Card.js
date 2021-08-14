@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Button } from "react-bootstrap";
+import ProductContext from "./ProductContext";
 
 function Card({ movie, removeUpdate }) {
   const [count, setCount] = useState(0);
+
+  const { setMovieShow } = useContext(ProductContext);
+  console.log();
 
   function handleIncrementClick() {
     setCount(count + 1);
@@ -50,6 +55,9 @@ function Card({ movie, removeUpdate }) {
               Delete item
             </button>
           </div>
+          <Button variant="primary" onClick={() => setMovieShow(movie)}>
+            Add to basket
+          </Button>
         </div>
       </div>
     </>

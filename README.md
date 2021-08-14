@@ -77,3 +77,6 @@ return <div className="wrapper-list">{result}</div>;
 
 ##########################
 dev-4 branch:
+reference : https://github.com/maksymchak/movies-store
+
+in ListComp : add to Card, means onClick, "movie" is sent to Basket comp.
