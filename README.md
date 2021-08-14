@@ -74,3 +74,6 @@ return <div className="wrapper-list">{result}</div>;
 // problems:
 
 - -next : finish style comp Card
+
+##########################
+dev-4 branch:
