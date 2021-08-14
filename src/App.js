@@ -34,6 +34,7 @@ function App() {
       setSearch(data.Search.map(getRandomPrice));
     } catch (error) {
       console.log("error");
+      alert("error");
     }
   };
 
