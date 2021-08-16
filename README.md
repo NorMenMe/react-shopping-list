@@ -67,6 +67,7 @@ return <div className="wrapper-list">{result}</div>;
 
 - bonus: style error notifications with color
 
+- poolish: reread all the code,sugar code? delete all outlines,
 - gh-care + deploy
 
 ##########################
@@ -79,10 +80,10 @@ in ListComp : add to Card, means onClick:
 
 - problem:
 
--implement navbar,reac icons,
+- sass problem, re-install sass again
+
+-implement navbar,react icons,
 
 - uncomment removeUpdate,need in Basket
 
 - List Item,use props,
-
-- Next : find error on remove item

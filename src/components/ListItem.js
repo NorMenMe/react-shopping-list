@@ -1,22 +1,30 @@
 import React, { useState } from "react";
 
-function ListItem({ movie, index, onRemoveUpdate }) {
+function ListItem({
+  movie,
+  index,
+  onRemoveUpdate,
+  onUpdateArr,
+  arrForSum,
+  setArrForSum,
+}) {
   const [count, setCount] = useState(0);
-  // const [nums, setNums] = useState([]);
-  // const [arrNums, setArrNums] = useState([]);
+  const [priceItem, setPriceItem] = useState(0);
 
   function handleIncrementClick() {
     setCount(count + 1);
-    // setNums(movie.price * count);
-    // setArrNums([...arrNums, nums]);
+    setArrForSum([...arrForSum, movie.price]);
   }
-
-  // console.log(nums);
 
   function handleDecrementClick() {
     setCount(count - 1);
+    const temp = arrForSum.indexOf(movie.price);
+    const test = arrForSum;
+    test.splice(temp, 1);
+    setArrForSum(test);
   }
 
+  console.log(priceItem);
   return (
     <li key={index} className="listItem">
       <p>{index + 1}</p>
@@ -32,11 +40,11 @@ function ListItem({ movie, index, onRemoveUpdate }) {
           <span>-</span>
         </div>
       </div>
-      <p id="price">€{movie.price * count}</p>
+      <p id="price">€{priceItem}</p>
       <button
         type="button"
         className="btn btn-danger"
-        onClick={() => onRemoveUpdate(movie.imdbID)}
+        onClick={() => onRemoveUpdate(movie.imdbID, movie.price)}
       >
         Delete item
       </button>

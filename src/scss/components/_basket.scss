@@ -1,0 +1,15 @@
+.wrapper-basket {
+  width: 90%;
+  margin: 0 auto;
+  outline: 2px solid red;
+
+  h4 {
+    color: $primary;
+    margin-top: 2rem;
+  }
+
+  .listItem {
+    @include space-around;
+    outline: 2px solid red;
+  }
+}

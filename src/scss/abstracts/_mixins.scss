@@ -37,6 +37,12 @@
   justify-content: center;
 }
 
+@mixin flex-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 @mixin align {
   display: flex;
   flex-direction: column;
