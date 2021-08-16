@@ -13,7 +13,7 @@ function List() {
   const result = search.map((movie, index) => {
     return (
       <>
-        <Card key={index} movie={movie} removeUpdate={removeUpdate} />
+        <Card movie={movie} removeUpdate={removeUpdate} />
       </>
     );
   });

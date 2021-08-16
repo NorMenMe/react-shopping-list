@@ -5,9 +5,10 @@ import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
 import { Navbar, Container } from "react-bootstrap";
 import Home from "./components/Home";
 import Create from "./components/Create";
-import Show from "./components/Show";
+import Basket from "./components/Basket";
 import ProductContext from "../src/components/ProductContext";
 import { BiCameraMovie } from "react-icons/bi";
+import { RiShoppingCartLine } from "react-icons/ri";
 
 function App() {
   const [entry, setEntry] = useState("");
@@ -17,8 +18,12 @@ function App() {
   const handleInputChange = (e) => setEntry(e.target.value);
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    getFetch();
-    setEntry("");
+    if (entry.length > 0 && entry !== " ") {
+      getFetch();
+      setEntry("");
+    } else {
+      alert("please enter the movie name!");
+    }
   };
 
   const getRandomPrice = (item) => {
@@ -27,21 +32,18 @@ function App() {
   };
 
   const getFetch = async () => {
-    try {
-      const response = await fetch(
-        `https://www.omdbapi.com/?apikey=b88fec9&s=${entry}`
-      );
-      const data = await response.json();
-      console.log(data.Error);
+    const response = await fetch(
+      `https://www.omdbapi.com/?apikey=b88fec9&s=${entry}`
+    );
+    const data = await response.json();
+
+    if (!data.Error) {
       setSearch(data.Search.map(getRandomPrice));
-    } catch (error) {
-      console.log("error");
-      alert("error");
+    } else {
+      setSearch([]);
+      alert(data.Error);
     }
   };
-
-  // console.log(search);
-  console.log(movieShow);
 
   return (
     <BrowserRouter>
@@ -50,9 +52,14 @@ function App() {
           <div className="logo">
             <BiCameraMovie size="60px" />
           </div>
-          <Link to="/" id="home">
-            Home
-          </Link>
+          <div className="wrapper-home-basket">
+            <Link to="/" id="home">
+              Home
+            </Link>
+            <Link to="/basket" id="basket">
+              <RiShoppingCartLine size="35px" className="icon-basket" />
+            </Link>
+          </div>
         </Container>
       </Navbar>
 
@@ -70,7 +77,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/create" component={Create} />
-          <Route exact path="/create" component={Show} />
+          <Route exact path="/basket" component={Basket} />
         </Switch>
       </ProductContext.Provider>
     </BrowserRouter>

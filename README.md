@@ -59,24 +59,30 @@ const result = search.map((movie, index) => {
 return <div className="wrapper-list">{result}</div>;
 ```
 
-//#########################
+//########################################################################
 
 -toDo steps prio :
 
-- all invalid cases : 'too many results' bei up, input-field empty click search : add a modal
+- style Show
 
--output : prompt(data.Error) ;
+- bonus: style error notifications with color
 
-- gh-care : check front-mentor readme, add code snippets
-
-`const var= 1`
-
-// problems:
-
-- -next : finish style comp Card
+- gh-care + deploy
 
 ##########################
 dev-4 branch:
 reference : https://github.com/maksymchak/movies-store
 
-in ListComp : add to Card, means onClick, "movie" is sent to Basket comp.
+in ListComp : add to Card, means onClick:
+
+"movie" is sent to Basket comp :
+
+- problem:
+
+-implement navbar,reac icons,
+
+- uncomment removeUpdate,need in Basket
+
+- List Item,use props,
+
+- Next : find error on remove item
