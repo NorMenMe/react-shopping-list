@@ -2,21 +2,18 @@ import React, { useState } from "react";
 
 function ListItem({ movie, index, onRemoveUpdate, arrForSum, setArrForSum }) {
   const [count, setCount] = useState(0);
-  // const [priceItem, setPriceItem] = useState(movie.price);
 
   console.log(movie.price);
 
   function handleIncrementClick() {
     setCount(count + 1);
-    // setPriceItem(count * movie.price);
     setArrForSum([...arrForSum, movie.price]);
   }
-  // console.log(priceItem);
 
   function handleDecrementClick() {
     setCount(count - 1);
     const temp = arrForSum.indexOf(movie.price);
-    const test = arrForSum;
+    const test = [...arrForSum];
     test.splice(temp, 1);
     setArrForSum(test);
   }

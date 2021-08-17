@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import ProductContext from "./ProductContext";
 import ListItem from "./ListItem";
 
@@ -6,6 +6,8 @@ function Basket() {
   const { movieShow, setMovieShow } = useContext(ProductContext);
 
   const [arrForSum, setArrForSum] = useState([]);
+
+  const [totalPrice, setTotalPrice] = useState(0);
 
   console.log(arrForSum);
 
@@ -27,23 +29,22 @@ function Basket() {
     />
   ));
 
-  // const getTotal = () => {
-  //   arrForSum.reduce((accu,currentVa) => {
-  //     return accu + Number(currentVa)
-  //   },0)
-  // }
+  useEffect(() => {
+    const tempReduce = arrForSum
+      .reduce((accu, currentVa) => {
+        return accu + Number(currentVa);
+      }, 0)
+      .toFixed(2);
+    setTotalPrice(tempReduce);
+    console.log(arrForSum);
+  }, [arrForSum]);
 
   return (
     <div className="wrapper-basket">
       <h4>Shopping basket</h4>
       <ul>{listMovieShow}</ul>
       <div>
-        <p className="total">
-          Total €
-          {arrForSum.reduce((accu, currentVa) => {
-            return accu + Number(currentVa);
-          }, 0)}
-        </p>
+        <p className="total">Total €{totalPrice}</p>
       </div>
     </div>
   );

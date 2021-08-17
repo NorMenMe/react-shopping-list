@@ -80,6 +80,10 @@ in ListComp : add to Card, means onClick:
 
 - uncomment removeUpdate,need in Basket
 
-- problem:
-  after arrForSum get updated, setPrice not updated ?
   - soft solution , keep it fixed.
+
+- 2 problems:
+
+  after arrForSum get updated, reduce function has to be called again.
+
+  -should the price of the listItem also receive a state and remove it ?
