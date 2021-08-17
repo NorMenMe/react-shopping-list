@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
 import ProductContext from "./ProductContext";
 
-function Card({ movie, removeUpdate }) {
+function Card({ movie }) {
   const { movieShow, setMovieShow } = useContext(ProductContext);
 
   return (

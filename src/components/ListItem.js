@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 
-function ListItem({
-  movie,
-  index,
-  onRemoveUpdate,
-  onUpdateArr,
-  arrForSum,
-  setArrForSum,
-}) {
+function ListItem({ movie, index, onRemoveUpdate, arrForSum, setArrForSum }) {
   const [count, setCount] = useState(0);
-  const [priceItem, setPriceItem] = useState(0);
+  // const [priceItem, setPriceItem] = useState(movie.price);
+
+  console.log(movie.price);
 
   function handleIncrementClick() {
     setCount(count + 1);
+    // setPriceItem(count * movie.price);
     setArrForSum([...arrForSum, movie.price]);
   }
+  // console.log(priceItem);
 
   function handleDecrementClick() {
     setCount(count - 1);
@@ -24,23 +21,28 @@ function ListItem({
     setArrForSum(test);
   }
 
-  console.log(priceItem);
   return (
     <li key={index} className="listItem">
-      <p>{index + 1}</p>
-      <p>{movie.Title}</p>
+      <div className="number-items">
+        <p>{index + 1}</p>
+      </div>
+      <div className="title">
+        <p>{movie.Title}</p>
+      </div>
       <div className="wrapper-counter">
-        <div id="increment" onClick={handleIncrementClick}>
+        <div className="wrapper-increment" onClick={handleIncrementClick}>
           <span>+</span>
         </div>
-      </div>
-      <span id="count">{count}</span>
-      <div className="wrapper-decrement">
-        <div id="decrement" onClick={handleDecrementClick}>
+
+        <span className="count">{count}</span>
+
+        <div className="wrapper-decrement" onClick={handleDecrementClick}>
           <span>-</span>
         </div>
       </div>
-      <p id="price">€{priceItem}</p>
+      <div className="price">
+        <p>€{movie.price}</p>
+      </div>
       <button
         type="button"
         className="btn btn-danger"

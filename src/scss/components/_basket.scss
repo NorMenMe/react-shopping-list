@@ -1,15 +1,90 @@
 .wrapper-basket {
   width: 90%;
   margin: 0 auto;
-  outline: 2px solid red;
+  //   outline: 2px solid red;
+  background-color: rgb(176, 230, 248);
 
   h4 {
-    color: $primary;
+    color: black;
     margin-top: 2rem;
   }
 
   .listItem {
-    @include space-around;
-    outline: 2px solid red;
+    @include space-evenly;
+    // outline: 2px solid red;
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+
+    .number-items {
+      //   outline: 2px solid red;
+      width: 10%;
+      @include center;
+
+      p {
+        display: inline-block;
+        margin: auto;
+      }
+    }
+
+    .title {
+      width: 10%;
+      @include center;
+      //   outline: 2px solid red;
+
+      p {
+        display: inline-block;
+        margin: auto;
+      }
+    }
+
+    .wrapper-counter {
+      width: 10%;
+      //   outline: 2px solid red;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      .wrapper-increment {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: $secondary;
+        border-radius: 5px;
+        @include center;
+        margin: auto;
+      }
+
+      .wrapper-increment:hover {
+        color: white;
+      }
+
+      .count {
+        margin: auto;
+      }
+
+      .wrapper-decrement {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: $secondary;
+        border-radius: 5px;
+        @include center;
+        margin: auto;
+      }
+
+      .wrapper-decrement:hover {
+        color: white;
+      }
+    }
+
+    .price {
+      //   outline: 2px solid red;
+      width: 10%;
+      @include center;
+
+      p {
+        display: inline-block;
+        margin: auto;
+      }
+    }
   }
 }

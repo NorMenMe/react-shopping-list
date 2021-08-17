@@ -4,19 +4,15 @@ import ListItem from "./ListItem";
 
 function Basket() {
   const { movieShow, setMovieShow } = useContext(ProductContext);
+
   const [arrForSum, setArrForSum] = useState([]);
 
   console.log(arrForSum);
 
-  // const filtered = () => {
-  //   arrForSum.reduce((accu, currentVa) => {
-  //     return accu + currentVa;
-  //   }, 0);
-  // };
-
   const removeUpdate = (id, price) => {
     const temp = movieShow.filter((movie) => movie.imdbID !== id);
     setMovieShow(temp);
+
     const newArr = arrForSum.filter((item) => item !== price);
     setArrForSum(newArr);
   };
@@ -30,6 +26,12 @@ function Basket() {
       setArrForSum={setArrForSum}
     />
   ));
+
+  // const getTotal = () => {
+  //   arrForSum.reduce((accu,currentVa) => {
+  //     return accu + Number(currentVa)
+  //   },0)
+  // }
 
   return (
     <div className="wrapper-basket">

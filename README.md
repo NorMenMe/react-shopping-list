@@ -63,27 +63,23 @@ return <div className="wrapper-list">{result}</div>;
 
 -toDo steps prio :
 
-- style Show
+- style Show : the + and -
 
 - bonus: style error notifications with color
 
 - poolish: reread all the code,sugar code? delete all outlines,
+
 - gh-care + deploy
 
-##########################
 dev-4 branch:
 reference : https://github.com/maksymchak/movies-store
 
 in ListComp : add to Card, means onClick:
 
-"movie" is sent to Basket comp :
-
-- problem:
-
-- sass problem, re-install sass again
-
 -implement navbar,react icons,
 
 - uncomment removeUpdate,need in Basket
 
-- List Item,use props,
+- problem:
+  after arrForSum get updated, setPrice not updated ?
+  - soft solution , keep it fixed.

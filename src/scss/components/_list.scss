@@ -1,8 +1,5 @@
 .wrapper-list {
-  // @include center-column;
   @include flex-wrap;
-  // @include center;
-  // outline: 2px solid red;
 
   .card {
     margin-top: 2rem;

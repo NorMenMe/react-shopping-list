@@ -5,15 +5,10 @@ import Card from "./Card";
 function List() {
   const { search, setSearch } = useContext(ProductContext);
 
-  const removeUpdate = (id) => {
-    const temp = search.filter((movie) => movie.imdbID !== id);
-    setSearch(temp);
-  };
-
   const result = search.map((movie, index) => {
     return (
       <>
-        <Card movie={movie} removeUpdate={removeUpdate} />
+        <Card movie={movie} />
       </>
     );
   });
