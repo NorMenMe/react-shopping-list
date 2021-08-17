@@ -1,23 +1,23 @@
 .wrapper-basket {
   width: 90%;
   margin: 0 auto;
-  //   outline: 2px solid red;
   background-color: rgb(176, 230, 248);
+  padding: 2%;
+  margin-top: 2rem;
+  border-radius: 9px;
 
   h4 {
     color: black;
-    margin-top: 2rem;
+
+    margin-left: 2rem;
   }
 
   .listItem {
     @include space-evenly;
-    // outline: 2px solid red;
-    width: 80%;
-    margin: 0 auto;
+    width: 100%;
     background-color: white;
 
     .number-items {
-      //   outline: 2px solid red;
       width: 10%;
       @include center;
 
@@ -30,7 +30,6 @@
     .title {
       width: 10%;
       @include center;
-      //   outline: 2px solid red;
 
       p {
         display: inline-block;
@@ -40,10 +39,7 @@
 
     .wrapper-counter {
       width: 10%;
-      //   outline: 2px solid red;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
+      @include space-evenly;
 
       .wrapper-increment {
         width: 1.5rem;
@@ -77,7 +73,6 @@
     }
 
     .price {
-      //   outline: 2px solid red;
       width: 10%;
       @include center;
 
@@ -86,5 +81,9 @@
         margin: auto;
       }
     }
+  }
+
+  .total {
+    margin-left: 2rem;
   }
 }

@@ -3,9 +3,11 @@ import ProductContext from "./ProductContext";
 import Card from "./Card";
 
 function List() {
-  const { search, setSearch } = useContext(ProductContext);
+  const { search } = useContext(ProductContext);
 
-  const result = search.map((movie, index) => {
+  // ↓↓↓ store the map-logic inside a variable and then pass it through the render process
+
+  const result = search.map((movie) => {
     return (
       <>
         <Card movie={movie} />

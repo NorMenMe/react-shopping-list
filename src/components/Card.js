@@ -14,7 +14,6 @@ function Card({ movie }) {
         <div className="card-body">
           <div className="wrapper-card">
             <h3 className="card-title">{movie.Title}</h3>
-
             <p id="price">€{movie.price}</p>
             <div className="wrapper-button-basket">
               <Button

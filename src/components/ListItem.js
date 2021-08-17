@@ -3,19 +3,19 @@ import React, { useState } from "react";
 function ListItem({ movie, index, onRemoveUpdate, arrForSum, setArrForSum }) {
   const [count, setCount] = useState(0);
 
-  console.log(movie.price);
-
   function handleIncrementClick() {
     setCount(count + 1);
     setArrForSum([...arrForSum, movie.price]);
   }
 
+  // ↓↓↓ update "arrForSum" without the decremented item
+
   function handleDecrementClick() {
     setCount(count - 1);
-    const temp = arrForSum.indexOf(movie.price);
-    const test = [...arrForSum];
-    test.splice(temp, 1);
-    setArrForSum(test);
+    const indexNum = arrForSum.indexOf(movie.price);
+    const tempArr = [...arrForSum];
+    tempArr.splice(indexNum, 1);
+    setArrForSum(tempArr);
   }
 
   return (

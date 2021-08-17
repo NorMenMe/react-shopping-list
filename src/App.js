@@ -18,6 +18,9 @@ function App() {
   const handleInputChange = (e) => setEntry(e.target.value);
   const handleFormSubmit = (e) => {
     e.preventDefault();
+
+    // ↓↓↓ declare valid cases otherwise display the error
+
     if (entry.length > 0 && entry !== " ") {
       getFetch();
       setEntry("");
@@ -25,6 +28,8 @@ function App() {
       alert("please enter the movie name!");
     }
   };
+
+  // ↓↓↓ building a key with a random number value for line 46
 
   const getRandomPrice = (item) => {
     item.price = (Math.random() * 10).toFixed(2);
@@ -36,6 +41,8 @@ function App() {
       `https://www.omdbapi.com/?apikey=b88fec9&s=${entry}`
     );
     const data = await response.json();
+
+    // ↓↓↓ inside every fetched object, add a key/value with price
 
     if (!data.Error) {
       setSearch(data.Search.map(getRandomPrice));
