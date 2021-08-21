@@ -3,12 +3,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import { useState } from "react";
 import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
 import { Navbar, Container } from "react-bootstrap";
-import Home from "./components/Home";
-import Create from "./components/Create";
-import Basket from "./components/Basket";
-import ProductContext from "../src/components/ProductContext";
 import { BiCameraMovie } from "react-icons/bi";
 import { RiShoppingCartLine } from "react-icons/ri";
+import { Home, Create, Basket, ProductContext } from "./importer";
 
 function App() {
   const [entry, setEntry] = useState("");
@@ -29,7 +26,7 @@ function App() {
     }
   };
 
-  // ↓↓↓ building a key with a random number value for line 46
+  // ↓↓↓ building a key with a value of a random number, see line 46
 
   const getRandomPrice = (item) => {
     item.price = (Math.random() * 10).toFixed(2);
