@@ -19,7 +19,7 @@ function App() {
     // ↓↓↓ declare valid cases otherwise display the error
 
     if (entry.length > 0 && entry !== " ") {
-      getFetch();
+      // getFetch();
       setEntry("");
     } else {
       alert("please enter the movie name!");
