@@ -1,6 +1,6 @@
 import "./scss/main.scss";
 import "bootstrap/dist/css/bootstrap.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
 import { Navbar, Container } from "react-bootstrap";
 import { BiCameraMovie } from "react-icons/bi";
@@ -9,33 +9,30 @@ import { Home, Create, Basket, ProductContext } from "./importer";
 
 function App() {
   const [entry, setEntry] = useState("");
+  const [query, setQuery] = useState("");
   const [search, setSearch] = useState([]);
   const [movieShow, setMovieShow] = useState([]);
 
   const handleInputChange = (e) => setEntry(e.target.value);
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    setQuery(entry);
 
     // ↓↓↓ declare valid cases otherwise display the error
 
     if (entry.length > 0 && entry !== " ") {
-      getFetch();
+      setQuery(entry);
       setEntry("");
     } else {
       alert("please enter the movie name!");
     }
   };
 
-  // ↓↓↓ building a key with a value of a random number, see line 46
-
-  const getRandomPrice = (item) => {
-    item.price = (Math.random() * 10).toFixed(2);
-    return item;
-  };
+  // ↓↓↓ prepping for fetching
 
   const getFetch = async () => {
     const response = await fetch(
-      `https://www.omdbapi.com/?apikey=b88fec9&s=${entry}`
+      `https://www.omdbapi.com/?apikey=b88fec9&s=${query}`
     );
     const data = await response.json();
 
@@ -47,6 +44,19 @@ function App() {
       setSearch([]);
       alert(data.Error);
     }
+  };
+
+  useEffect(() => {
+    if (query.length > 0) {
+      getFetch();
+    }
+  }, [query]);
+
+  // ↓↓↓ building a key with a value of a random number, see line 46
+
+  const getRandomPrice = (item) => {
+    item.price = (Math.random() * 10).toFixed(2);
+    return item;
   };
 
   return (
