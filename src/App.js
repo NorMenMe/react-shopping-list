@@ -52,7 +52,7 @@ function App() {
     }
   }, [query]);
 
-  // ↓↓↓ building a key with a value of a random number, see line 46
+  // ↓↓↓ building a key with a value of a random number, see line 42
 
   const getRandomPrice = (item) => {
     item.price = (Math.random() * 10).toFixed(2);
