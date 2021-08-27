@@ -7,6 +7,9 @@ import { BiCameraMovie } from "react-icons/bi";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { Home, Create, Basket, ProductContext } from "./importer";
 
+require("dotenv").config();
+console.log(process.env.steve);
+
 function App() {
   const [entry, setEntry] = useState("");
   const [query, setQuery] = useState("");
@@ -30,9 +33,13 @@ function App() {
 
   // ↓↓↓ prepping for fetching
 
+  console.log(process.env.REACT_APP_API_KEY);
+
+  const API = process.env.REACT_APP_API_KEY;
+
   const getFetch = async () => {
     const response = await fetch(
-      `https://www.omdbapi.com/?apikey=b88fec9&s=${query}`
+      `https://www.omdbapi.com/?apikey=${API}&s=${query}`
     );
     const data = await response.json();
 
