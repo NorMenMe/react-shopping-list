@@ -16,7 +16,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 # API keys
-.env
+config.js
 # Bower dependency directory (https://bower.io/)
 bower_components
 

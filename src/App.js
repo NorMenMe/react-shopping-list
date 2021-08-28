@@ -6,9 +6,7 @@ import { Navbar, Container } from "react-bootstrap";
 import { BiCameraMovie } from "react-icons/bi";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { Home, Create, Basket, ProductContext } from "./importer";
-
-require("dotenv").config();
-console.log(process.env.steve);
+import shopping_list_config from "./config";
 
 function App() {
   const [entry, setEntry] = useState("");
@@ -33,9 +31,7 @@ function App() {
 
   // ↓↓↓ prepping for fetching
 
-  console.log(process.env.REACT_APP_API_KEY);
-
-  const API = process.env.REACT_APP_API_KEY;
+  const API = shopping_list_config.API_KEY;
 
   const getFetch = async () => {
     const response = await fetch(
