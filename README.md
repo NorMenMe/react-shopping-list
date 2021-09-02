@@ -48,3 +48,9 @@ const result = search.map((movie) => {
 
 return <div className="wrapper-list">{result}</div>;
 ```
+
+### 🔧 Built with :
+
+- React-router
+- React-context
+- Sass
