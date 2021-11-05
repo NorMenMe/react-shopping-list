@@ -1,12 +1,12 @@
 import "./scss/main.scss";
 import "bootstrap/dist/css/bootstrap.css";
+import shopping_list_config from "./config";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
 import { Navbar, Container } from "react-bootstrap";
 import { BiCameraMovie } from "react-icons/bi";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { Home, Create, Basket, ProductContext } from "./importer";
-// where is the config file ? find again your secrets// import shopping_list_config from "./config";
 
 function App() {
   const [entry, setEntry] = useState("");
