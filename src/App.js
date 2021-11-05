@@ -6,7 +6,7 @@ import { Navbar, Container } from "react-bootstrap";
 import { BiCameraMovie } from "react-icons/bi";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { Home, Create, Basket, ProductContext } from "./importer";
-import shopping_list_config from "./config";
+// where is the config file ? find again your secrets// import shopping_list_config from "./config";
 
 function App() {
   const [entry, setEntry] = useState("");
@@ -20,7 +20,6 @@ function App() {
     setQuery(entry);
 
     // ↓↓↓ declare valid cases otherwise display the error
-
     if (entry.length > 0 && entry !== " ") {
       setQuery(entry);
       setEntry("");
